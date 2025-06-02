@@ -12,13 +12,13 @@
 - The Notes field is missing or empty in the response  
 
 **Root Cause:**  
-The `Assignment` constructor does not assign the notes parameter to the `Notes` property.
+The `Assignment` constructor previously failed to assign the `notes` parameter to the `Notes` property.
 
 **Fix:**  
-Assign the `notes` parameter correctly inside the constructor.
+This bug was resolved in a prior week. No code or test changes were made in Week 9.
 
 **Test Added:**  
-A test will be added to confirm proper assignment of the `Notes` field.
+A regression test (`Constructor_WithNotes_ShouldAssignNotes`) was added in the earlier week alongside the fix to ensure the Notes field is correctly assigned.
 
 ---
 
@@ -31,13 +31,13 @@ A test will be added to confirm proper assignment of the `Notes` field.
 - Create a completed assignment with a past due date — it still shows as overdue  
 
 **Root Cause:**  
-The `IsOverdue()` method does not check whether a due date is provided or if the assignment is completed.
+The `IsOverdue()` method did not check for a null due date or completion status.
 
 **Fix:**  
-Update the logic to ensure the method returns `true` only when:
+The logic was updated to return `true` only when:  
 - A due date exists  
 - The assignment is not completed  
 - The due date is in the past
 
-**Tests Added:**  
-Tests will be added to verify the fixed behavior for each case.
+**Test Added:**  
+The test `IsOverdue_ShouldReturnFalse_WhenAssignmentIsCompleted` confirms that completed assignments are not flagged as overdue. Additional coverage ensures the method handles null due dates correctly.

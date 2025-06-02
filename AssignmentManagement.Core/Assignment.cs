@@ -40,7 +40,7 @@ namespace AssignmentManagement.Core
 
         public bool IsOverdue()
         {
-            return !IsCompleted && DueDate<DateTime.Now; // BUG-2025-343: Logic error in IsOverdue for completed assignments
+            return DueDate.HasValue && !IsCompleted && DueDate.Value.Date < DateTime.Today; // BUG-2025-343: Logic error in IsOverdue for completed assignments
         }
 
         public override string ToString()
