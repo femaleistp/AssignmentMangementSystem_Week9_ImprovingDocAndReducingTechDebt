@@ -17,6 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssignmentManagement.Consol
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{558CE09E-9331-423E-8366-2F3D8755A7DD}"
 	ProjectSection(SolutionItems) = preProject
+		BugReports.md = BugReports.md
 		MaintenancePlan.md = MaintenancePlan.md
 		README.md = README.md
 	EndProjectSection
